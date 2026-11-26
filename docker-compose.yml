@@ -1,0 +1,11 @@
+services:
+  hadoop:
+    build: .
+    container_name: hadoop-single
+    ports:
+      - "9870:9870" # Interfaz NameNode
+      - "8088:8088" # Interfaz YARN
+    volumes:
+      - ./data:/root/data
+      - ./streaming:/root/streaming
+
