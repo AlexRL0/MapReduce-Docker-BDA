@@ -11,6 +11,12 @@ ENV HADOOP_VERSION=3.3.6 \
  HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop \
  PATH=/opt/hadoop/bin:/opt/hadoop/sbin:$PATH
 
+ENV HDFS_NAMENODE_USER=root \
+    HDFS_DATANODE_USER=root \
+    HDFS_SECONDARYNAMENODE_USER=root \
+    YARN_RESOURCEMANAGER_USER=root \
+    YARN_NODEMANAGER_USER=root
+
 RUN curl -L -o /tmp/hadoop.tgz \
  https://downloads.apache.org/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz && \
  tar -xzf /tmp/hadoop.tgz -C /opt && \
